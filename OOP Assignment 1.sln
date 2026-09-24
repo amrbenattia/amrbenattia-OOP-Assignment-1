@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOP Assignment 1", "OOP Assignment 1.csproj", "{42273D41-F858-47CA-BF39-3A9D74630A2C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Part2_HotelReservationSystem", "Part2_HotelReservationSystem/Part2_HotelReservationSystem.csproj", "{42273D41-F858-47CA-BF39-3A9D74630A2C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

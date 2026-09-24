@@ -20,7 +20,7 @@ public class ReservationItem
         Room = room;
         CheckInDate = checkInDate;
         CheckOutDate = checkOutDate;
-        room.Register(this);   // last line
+        room.Register(this);
 
     }
 
