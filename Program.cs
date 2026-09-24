@@ -9,15 +9,11 @@ class Program
         var room = new Room(1, RoomType.Double, 100);
         room.ChangeNightlyRate(200);
         Console.WriteLine(room.RoomId);
-
-        var reservation = new ReservationItem(room, new DateTime(2025, 10, 9), new DateTime(2025, 10, 12));
-
-        guest.AddReservation(reservation);
-
+        guest.MakeReservation(room, new DateTime(2025, 10, 9), new DateTime(2025, 10, 12));
+        guest.MakeReservation(room, new DateTime(2025, 10, 9), new DateTime(2025, 10, 12));
         foreach (ReservationItem item in guest.Reservations)
         {
-
-            Console.WriteLine(item.Cost);
+            Console.WriteLine(item.Status);
         }
     }
 }

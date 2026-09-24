@@ -9,7 +9,7 @@ public class ReservationItem
     public ReservationStatus Status { get; private set; } = ReservationStatus.Pending;
     public decimal Cost => (CheckOutDate - CheckInDate).Days * Room.NightlyRate;
 
-    public ReservationItem(Room room, DateTime checkInDate, DateTime checkOutDate)
+    internal ReservationItem(Room room, DateTime checkInDate, DateTime checkOutDate)
     {
         ArgumentNullException.ThrowIfNull(room);
         if (checkInDate.Date >= checkOutDate.Date) throw new ArgumentException("Check-out must be after check-in.", nameof(checkOutDate));
@@ -43,7 +43,7 @@ public class ReservationItem
     {
         if (Status is not (ReservationStatus.Pending or ReservationStatus.Confirmed))
             throw new InvalidOperationException($"Cannot cancel a {Status} reservation.");
-        Status = ReservationStatus.Cancelled;
+        Status = ReservationStatus.Canceled;
     }
 
     public override string ToString()

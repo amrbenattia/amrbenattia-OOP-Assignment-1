@@ -1,4 +1,4 @@
-namespace OOP_Assignment_1;
+﻿namespace OOP_Assignment_1;
 
 public class Guest
 {
@@ -17,10 +17,12 @@ public class Guest
         PhoneNumber = phoneNumber;
     }
 
-    public void AddReservation(ReservationItem item)
+    public ReservationItem MakeReservation(Room room, DateTime checkInDate, DateTime checkOutDate)
     {
-        ArgumentNullException.ThrowIfNull(item);
-        _reservations.Add(item);
+        ArgumentNullException.ThrowIfNull(room);
+        var reservation = new ReservationItem(room, checkInDate, checkOutDate);
+        _reservations.Add(reservation);
+        return reservation;
     }
 
     public override string ToString()

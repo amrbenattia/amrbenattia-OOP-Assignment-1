@@ -10,5 +10,5 @@ public enum RoomType
 public enum ReservationStatus
 {
     Pending, Confirmed, CheckedIn,
-    CheckedOut, Cancelled
+    CheckedOut, Canceled
 }
