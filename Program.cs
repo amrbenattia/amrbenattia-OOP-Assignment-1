@@ -10,7 +10,7 @@ class Program
         room.ChangeNightlyRate(200);
         Console.WriteLine(room.RoomId);
 
-        var reservation = new ReservationItem(room, new DateTime(2025, 10, 13), new DateTime(2025, 10, 12));
+        var reservation = new ReservationItem(room, new DateTime(2025, 10, 9), new DateTime(2025, 10, 12));
 
         guest.AddReservation(reservation);
 

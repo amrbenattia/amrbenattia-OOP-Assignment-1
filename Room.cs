@@ -24,6 +24,17 @@ public class Room
         NightlyRate = newRate;
     }
 
+    public void StartMaintenance()
+    {
+        if (IsUnderMaintenance) throw new InvalidOperationException("already under maintaince.");
+        IsUnderMaintenance = true;
+    }
+    public void EndMaintenance()
+    {
+        if (!IsUnderMaintenance) throw new InvalidOperationException("alrady maintaince is done.");
+        IsUnderMaintenance = false;
+    }
+
     public override string ToString()
     {
         return $"Room {RoomNumber} {RoomId}";

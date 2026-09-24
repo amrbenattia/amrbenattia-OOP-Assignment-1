@@ -6,3 +6,9 @@ public enum RoomType
     Double,
     Suite,
 }
+
+public enum ReservationStatus
+{
+    Pending, Confirmed, CheckedIn,
+    CheckedOut, Cancelled
+}
