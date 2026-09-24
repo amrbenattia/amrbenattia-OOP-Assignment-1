@@ -7,6 +7,7 @@ public class Room
     public RoomType RoomType { get; }
     public decimal NightlyRate { get; private set; }
     public bool IsUnderMaintenance { get; private set; }
+    private readonly List<ReservationItem> _reservations = [];
 
     public Room(int roomNumber, RoomType roomType, decimal nightlyRate)
     {
@@ -35,8 +36,11 @@ public class Room
         IsUnderMaintenance = false;
     }
 
-    public override string ToString()
-    {
-        return $"Room {RoomNumber} {RoomId}";
-    }
+
+    public bool IsAvailable(DateTime checkIn, DateTime checkOut) =>
+        !_reservations.Any(r => r.IsActive
+                             && r.CheckInDate.Date < checkOut.Date
+                             && checkIn.Date < r.CheckOutDate.Date);
+
+    internal void Register(ReservationItem reservation) => _reservations.Add(reservation);
 }
